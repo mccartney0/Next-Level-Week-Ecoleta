@@ -44,6 +44,7 @@ form{
 
     max-width: 730px;
 
+    overflow: hidden;
     /* Tamanho da caixa agora vai ter a borda */
     /* box-sizing: border-box;  */
 }
@@ -83,8 +84,7 @@ form input, form select{
     padding: 16px 24px;
     font-size: 16px;
 
-    outline-color: rgba(142, 243, 155, 0.363);
-
+    outline-color: #34CB7986;
     border-radius: 8px;
 
 }
@@ -122,10 +122,64 @@ form button{
 
     margin-top: 40px;
 
-    
+    float: right;
 }
 
 form button:hover{
     background-color: #2FB86E;
     transition: background-color 400ms;
+}
+
+.itens-grid{
+    display: grid;
+    /* 3 colunas de 200px ou frações 1fr 1fr 1fr */
+    grid-template-columns: 1fr 1fr 1fr;
+    /* Separação nas grids com Gap */
+    gap: 16px;
+}
+
+.itens-grid li{
+    background-color: #F5F5F5;
+    list-style: none;
+
+    border: 2px solid #F5F5F5;
+    border-radius: 8px;
+
+    height: 180px;
+    padding: 32px 24px 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    text-align: center;
+
+    cursor: pointer;
+
+}
+
+.itens-grid li span {
+    margin-top: 12px;
+    
+    /* Para ter um tamanho a ser computado sozinho */
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+
+    color: var(--title-color);
+
+}
+
+/* Procurando li que tenha a classe selected */
+.itens-grid li.selected{
+    background: #E1FAEC;
+    border: 2px solid #34CB79;
+}
+
+/* Removento os cliques dos filhos do li */
+.itens-grid li img,
+.itens-grid li span{
+    pointer-events: none;
 }
