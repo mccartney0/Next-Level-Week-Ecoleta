@@ -4,23 +4,34 @@ const server = express(); // Servidor express
 // Configurar pasta pública - redirecionamentos
 server.use(express.static("public"));
 
+
+// Utilizando template engina nunjucks
+const nunjucks = require("nunjucks")
+nunjucks.configure("src/views", {
+    express: server,
+    noCache: true
+});
+
+
+
+
 // Configurar caminhos da minha aplicação
 // Página inicial
 // O / via get vai responder a aplicação
 // req = Requisição
 // res = Resposta
 server.get("/", (req, res) => {
-    res.sendFile(__dirname + "/views/index.html");
+    return res.render("index.html", { title: "Seu marketplace de coleta de resíduos"});
 });
 
 //Criando outras rotas
 server.get("/create-point", (req, res) => {
-    res.sendFile(__dirname + "/views/create-point.html");
+    return res.render("create-point.html");
 });
 
 //Criando outras rotas
-server.get("/search-results", (req, res) => {
-    res.sendFile(__dirname + "/views/search-results.html");
+server.get("/search", (req, res) => {
+    return res.render("search-results.html");
 });
 
 // Ligar o servidor

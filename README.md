@@ -4,4 +4,4 @@
 
 ### Rocketseat 2020
 
-![Home](https://raw.githubusercontent.com/mccartney0/Next-Level-Week-Ecoleta/master/icones/home.jpg "Home")
+![Home](https://raw.githubusercontent.com/mccartney0/Next-Level-Week-Ecoleta/master/public/icones/home.jpg "Home")
