@@ -1,0 +1,26 @@
+{
+  "name": "nlw",
+  "version": "1.0.0",
+  "description": "![Home](https://raw.githubusercontent.com/mccartney0/Next-Level-Week-Ecoleta/master/icones/home.jpg \"Home\")",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mccartney0/Next-Level-Week-Ecoleta.git"
+  },
+  "keywords": [],
+  "author": "Allan Gomes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mccartney0/Next-Level-Week-Ecoleta/issues"
+  },
+  "homepage": "https://github.com/mccartney0/Next-Level-Week-Ecoleta#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

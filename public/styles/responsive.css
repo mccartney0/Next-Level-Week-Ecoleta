@@ -8,7 +8,7 @@
         text-align: center;
     }
 
-    #page-home header a{
+    #page-home header .create-point{
         position: absolute;
         bottom: 40px;
         left: 50%;
@@ -57,7 +57,7 @@
         margin-top: 5px;
     }
 
-    #page-home header a {
+    #page-home header .create-point {
         bottom: 20px;
         left: 49%;
     }
