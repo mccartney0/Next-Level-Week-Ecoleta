@@ -1,62 +1,61 @@
-<!DOCTYPE html>
-<html lang="pt_br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "layout.html" %}
+
+{% set pageId = "page-search-results" %}
+
+{% block title %}
     <title>Resultado da pesquisa</title>
+{% endblock title %}
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="/styles/main.css">
+{% block styles %}
     <link rel="stylesheet" href="/styles/search-results.css">
+{% endblock styles %}
 
-    <link rel="stylesheet" href="/styles/responsive.css">
+{% block content %}
+    {%include "partials/page-header.html" %}
 
-</head>
-<body>
-    <div id="page-search-results">
-            
-        {%include "partials/page-header.html" %}
-            
-            <main>
-                <h4>
-                    <strong>3 pontos</strong> encontrados
-                </h4>
+    <main>
+        <h4>
+            <strong>3 pontos</strong>
+            encontrados
+        </h4>
 
-                <div class="cards">
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1528190336454-13cd56b45b5a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="Colectoria">
-                        <h1>Colectoria</h1>
-                        <h3>Resíduos Eletrônicos, Lâmpadas</h3>
-                        <p>
-                            Rio do Sul, Santa Catarina <br>
-                            Guilherme Gemballa, Jardim América <br>
-                            Nº 260
-                        </p>
-                    </div>
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1577369083609-051feb777894?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Papersider">
-                        <h1>Cleanworld</h1>
-                        <h3>Resíduos Orgânicos, Óleo de Cozinha</h3>
-                        <p>
-                            Rio do Sul, Santa Catarina <br>
-                            Guilherme Gemballa, Jardim América <br>
-                            Nº 260
-                        </p>
-                    </div>
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1579756423478-02bc82a97679?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Papersider">
-                        <h1>Papersider</h1>
-                        <h3>Pepéis e Papelão</h3>
-                        <p>
-                            Rio do Sul, Santa Catarina <br>
-                            Guilherme Gemballa, Jardim América <br>
-                            Nº 260
-                        </p>
-                    </div>
-                </div>
-            </main>
-    </div>
-<script src="/scripts/create-point.js"></script>
-</body>
-</html>
+        <div class="cards">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1528190336454-13cd56b45b5a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="Colectoria">
+                <h1>Colectoria</h1>
+                <h3>Resíduos Eletrônicos, Lâmpadas</h3>
+                <p>
+                    Rio do Sul, Santa Catarina
+                    <br>
+                    Guilherme Gemballa, Jardim América
+                    <br>
+                    Nº 260
+                </p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1577369083609-051feb777894?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Papersider">
+                <h1>Cleanworld</h1>
+                <h3>Resíduos Orgânicos, Óleo de Cozinha</h3>
+                <p>
+                    Rio do Sul, Santa Catarina
+                    <br>
+                    Guilherme Gemballa, Jardim América
+                    <br>
+                    Nº 260
+                </p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1579756423478-02bc82a97679?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Papersider">
+                <h1>Papersider</h1>
+                <h3>Pepéis e Papelão</h3>
+                <p>
+                    Rio do Sul, Santa Catarina
+                    <br>
+                    Guilherme Gemballa, Jardim América
+                    <br>
+                    Nº 260
+                </p>
+            </div>
+        </div>
+    </main>
+{% endblock content %}

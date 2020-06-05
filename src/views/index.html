@@ -1,43 +1,35 @@
-<!DOCTYPE html>
-<html lang="pt_br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecoleta</title>
+{# Herdará tudo do layout.html #}
+{% extends "layout.html" %} 
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="/styles/main.css">
+{% set pageId = "page-home" %}
+
+{% block styles %}
     <link rel="stylesheet" href="/styles/index.css">
     <link rel="stylesheet" href="/styles/modal.css">
+{% endblock styles %}
 
-    <link rel="stylesheet" href="/styles/responsive.css">
-
-</head>
-<body>
-    <div id="page-home">
-        <div class="content">
-            <header>
-                <a href="/"><img src="/icones/logo.svg" alt="Logomarca" title="Logomarca"></a>
-                <a href="/create-point" class="create-point">
-                    <span></span>
-                    Cadastre um ponto de coleta
-                </a>
-            </header>
-            
-            <main>
-                <h1>{{ title }}</h1>
-            
-                <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</p>
-                
-                <a href="#"><span></span><strong>Pesquisar pontos de coleta</strong></a>
-            </main>
-            
-        </div>
+{% block content %}
+    <div class="content">
+        <header>
+            <a href="/"><img src="/icones/logo.svg" alt="Logomarca" title="Logomarca"></a>
+            <a href="/create-point" class="create-point">
+                <span></span>
+                Cadastre um ponto de coleta
+            </a>
+        </header>
+        
+        <main>
+            <h1>{{ title }}</h1>
+            <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</p>
+            <a href="#"><span></span><strong>Pesquisar pontos de coleta</strong></a>
+        </main>
     </div>
-    
+{% endblock content %}
+
+{% block modal %}
     {% include "partials/modal.html" %}
-    
-<script src="/scripts/index.js"></script>
-</body>
-</html>
+{% endblock modal %}
+
+{% block scripts %}
+    <script src="/scripts/index.js"></script>
+{% endblock scripts %}
