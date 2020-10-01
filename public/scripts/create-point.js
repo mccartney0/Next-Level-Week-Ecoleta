@@ -7,24 +7,31 @@ function populateUFs(){
     .then( res => res.json() ) //Função anônima que está retornando um valor
     .then( states => {
 
-        for(const state of states){
+        states.sort((estadoA, estadoB) => estadoA.nome.localeCompare(estadoB.nome))
+
+        states.forEach(state => {
             ufSelect.innerHTML += `<option value="${state.id}">${state.nome}</option>`
+            
+        });
 
-        }
-
-    } )
+    })
 }
 
-populateUFs()
+populateUFs();
 
+//Pegando o Evento AddEventListener
 function getCities(event){
     const citySelect = document.querySelector("[name=city]")
     const stateInput = document.querySelector("[name=state]")
 
+    //console.log(event.target);.value
+
     const ufValue = event.target.value
 
     const indexOfSelectedState = event.target.selectedIndex
+    // console.log(indexOfSelectedState)
     stateInput.value = event.target.options[indexOfSelectedState].text
+    // console.log(stateInput)
 
     const url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufValue}/municipios`
 
@@ -35,17 +42,17 @@ function getCities(event){
     .then( res => res.json() ) //Função anônima que está retornando um valor
     .then( cities => {
         
-        for(const city of cities){
+        cities.forEach(city => {
             citySelect.innerHTML += `<option value="${city.nome}">${city.nome}</option>`
-        }
-
+        })
+            
         citySelect.disabled = false
     })
 }
 
 document
     .querySelector("select[name=uf]")
-    ?.addEventListener("change", getCities) //Passando por referencia, sem ()
+    ?.addEventListener("change", getCities) //Passando por referencia, sem (), apenas quando mudar, será executada
 
     // Itens de coleta
     // Pegar todos os li's
