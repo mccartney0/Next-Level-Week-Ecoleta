@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/mccartney0/Next-Level-Week-Ecoleta#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "nunjucks": "^3.2.1"
   },
   "devDependencies": {
